@@ -15,15 +15,14 @@ function alphanumeric(str: string)
         return false; 
 }
 
-  function reverseString(str : string) 
-  {
+function reverseString(str : string) 
+{
     // iterate through the string backwards
     var reversed = '';
     for (var i = str.length - 1; i >= 0; i--)
         reversed += str[i];
     return reversed;
-  }
-
+}
 
 function flipCase(str: string)
 {
@@ -62,12 +61,14 @@ function writeToFile(input : string, output : string, time: number)
     });
 }
 
-let rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+let rl = readline.createInterface(
+{
+    input: process.stdin,
+    output: process.stdout
 });
 
-rl.question('\nPlease, enter an alphanumeric string: ', (answer) => {
+rl.question('\nPlease, enter an alphanumeric string: ', (answer) => 
+{
     if(!alphanumeric(answer))
     {
         console.log("Invalid input !")      
@@ -83,5 +84,5 @@ rl.question('\nPlease, enter an alphanumeric string: ', (answer) => {
         writeToFile(answer, output, time);
     }
   
-  rl.close();
+    rl.close();
 });
